@@ -1,3 +1,4 @@
 bin
 .vs
 obj
+image-compiler/depth-frames/*

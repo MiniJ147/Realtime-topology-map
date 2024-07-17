@@ -184,10 +184,10 @@ namespace Microsoft.Samples.Kinect.DepthBasics
             // create frame from the writable bitmap and add to encoder
             encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
 
-            string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
+            Int32 unixTimestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
 
             string myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            string path = Path.Combine(this.imgPath, "kinect-" + time + ".png");
+            string path = Path.Combine(this.imgPath, "frame-" + unixTimestamp + ".png");
 
             // write the new file to disk
             try
@@ -212,35 +212,7 @@ namespace Microsoft.Samples.Kinect.DepthBasics
         /// <param name="e">event arguments</param>
         private void ButtonScreenshotClick(object sender, RoutedEventArgs e)
         {
-            if (null == this.sensor)
-            {
-                this.statusBarText.Text = Properties.Resources.ConnectDeviceFirst;
-                return;
-            }
-
-            BitmapEncoder encoder = new PngBitmapEncoder();
-
-            encoder.Frames.Add(BitmapFrame.Create(this.colorBitmap));
-
-            string time = System.DateTime.Now.ToString("hh'-'mm'-'ss", CultureInfo.CurrentUICulture.DateTimeFormat);
-
-            string myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-
-            string path = Path.Combine(myPhotos, "KinectSnapshot-" + time + ".png");
-
-            try
-            {
-                using (FileStream fs = new FileStream(path, FileMode.Create))
-                {
-                    encoder.Save(fs);
-                }
-
-                this.statusBarText.Text = string.Format(CultureInfo.InvariantCulture, "{0} {1}", Properties.Resources.ScreenshotWriteSuccess, path);
-            }
-            catch (IOException)
-            {
-                this.statusBarText.Text = string.Format(CultureInfo.InvariantCulture, "{0} {1}", Properties.Resources.ScreenshotWriteFailed, path);
-            }
+            saveFrameToFile();
         }
         
         /// <summary>
