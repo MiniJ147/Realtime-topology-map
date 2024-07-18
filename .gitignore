@@ -3,3 +3,4 @@ bin
 obj
 image-compiler/depth-frames/*
 image-compiler/out.txt
+image-compiler/output/*

@@ -1,3 +1,20 @@
 {
-    "depth-frames-folder": "./depth-frames"
+    "depth-frames-dir": "./depth-frames",
+    "output-dir": "./output",
+    "color-data": {
+        "bgr": {
+            "red": [0,0,255],
+            "yellow":[0,204,255],
+            "green":[0,255,0],
+            "blue":[252,55,55],
+            "dark-blue":[255,0,0]
+        },
+        "grayscale": {
+            "red": 75,
+            "yellow":150,
+            "green":200,
+            "blue":235,
+            "dark-blue":256
+        }
+    }
 }
