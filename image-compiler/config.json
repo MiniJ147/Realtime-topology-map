@@ -1,5 +1,5 @@
 {
-    "depth-frames-dir": "./depth-frames",
+    "input-dir": "./depth-frames",
     "output-dir": "./output",
     "color-data": {
         "bgr": {
