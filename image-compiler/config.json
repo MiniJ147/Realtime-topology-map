@@ -1,19 +1,23 @@
 {
     "input-dir": "./depth-frames",
     "output-dir": "./output",
+    "timing": {
+        "thread-sleep": 1,
+        "no-files": 1
+    },
     "color-data": {
         "bgr": {
-            "red": [0,0,255],
+            "red": [150,100,211],
             "yellow":[0,204,255],
-            "green":[0,255,0],
+            "green":[120,100,0],
             "blue":[252,55,55],
             "dark-blue":[255,0,0]
         },
         "grayscale": {
-            "red": 75,
-            "yellow":150,
-            "green":200,
-            "blue":235,
+            "red": 200,
+            "yellow":210,
+            "green":220,
+            "blue":230,
             "dark-blue":256
         }
     }
