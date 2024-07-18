@@ -41,6 +41,8 @@ class Image_Compiler:
 
         self.output_dir = self.cfg['output-dir']
         self.input_dir = self.cfg['input-dir']
+        self.output_file_name = self.cfg['output-file-name']
+
         self.thread_sleep_time = self.cfg['timing']['thread-sleep'] 
         self.no_files_sleep = self.cfg['timing']['no-files']
 
@@ -77,7 +79,7 @@ class Image_Compiler:
                 r[y,x] = bgr[RED]
         
         out_img = cv2.merge([b,g,r])
-        cv2.imwrite(f"{self.output_dir}/final.png",out_img)
+        cv2.imwrite(f"{self.output_dir}/{self.output_file_name}",out_img)
 
 def thread_runtime():
     global STATE

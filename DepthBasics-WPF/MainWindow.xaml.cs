@@ -22,6 +22,7 @@ namespace Microsoft.Samples.Kinect.DepthBasics
         private int counter = 0;
         private int frame_cnt = 1000;
         private string imgPath;
+        private string imgName;
 
         /// <summary>
         /// Active Kinect sensor
@@ -50,7 +51,7 @@ namespace Microsoft.Samples.Kinect.DepthBasics
         {
             string content = File.ReadAllText("config.txt");
             string[] cfgArgs = content.Split(',');
-            if (cfgArgs.Length != 2)
+            if (cfgArgs.Length != 3)
             {
                 throw new Exception("either too many arguments or not enough. Please have 2 argumenst spereated by a ','");
             }
@@ -58,6 +59,7 @@ namespace Microsoft.Samples.Kinect.DepthBasics
 
             Int32.TryParse(cfgArgs[0], out this.frame_cnt);
             this.imgPath = cfgArgs[1];
+            this.imgName = cfgArgs[2];
 
             Console.WriteLine("Frame Count: " + this.frame_cnt + "\nImg Path: " + this.imgPath);
             InitializeComponent();
@@ -187,7 +189,7 @@ namespace Microsoft.Samples.Kinect.DepthBasics
             Int32 unixTimestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
 
             string myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            string path = Path.Combine(this.imgPath, "depth-frame.png");
+            string path = Path.Combine(this.imgPath, this.imgName);
 
             // write the new file to disk
             try

@@ -1,23 +1,24 @@
 {
     "input-dir": "./input",
     "output-dir": "./output",
+    "output-file-name": "output.png",
     "timing": {
         "thread-sleep": 1,
         "no-files": 1
     },
     "color-data": {
         "bgr": {
-            "red": [150,100,211],
-            "yellow":[0,204,255],
-            "green":[120,100,0],
-            "blue":[252,55,55],
+            "red": [0,0,255],
+            "yellow":[0,255,255],
+            "green":[0,255,0],
+            "blue":[243,55,55],
             "dark-blue":[255,0,0]
         },
         "grayscale": {
-            "red": 200,
-            "yellow":210,
-            "green":220,
-            "blue":230,
+            "red": 20,
+            "yellow":40,
+            "green":175,
+            "blue":200,
             "dark-blue":256
         }
     }

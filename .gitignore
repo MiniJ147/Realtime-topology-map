@@ -4,3 +4,4 @@ obj
 image-compiler/input/*
 image-compiler/out.txt
 image-compiler/output/*
+node_modules
