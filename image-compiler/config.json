@@ -1,5 +1,5 @@
 {
-    "input-dir": "./depth-frames",
+    "input-dir": "./input",
     "output-dir": "./output",
     "timing": {
         "thread-sleep": 1,

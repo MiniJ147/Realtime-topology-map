@@ -1,6 +1,6 @@
 bin
 .vs
 obj
-image-compiler/depth-frames/*
+image-compiler/input/*
 image-compiler/out.txt
 image-compiler/output/*

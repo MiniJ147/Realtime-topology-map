@@ -187,7 +187,7 @@ namespace Microsoft.Samples.Kinect.DepthBasics
             Int32 unixTimestamp = (int)DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds;
 
             string myPhotos = Environment.GetFolderPath(Environment.SpecialFolder.MyPictures);
-            string path = Path.Combine(this.imgPath, "frame-" + unixTimestamp + ".png");
+            string path = Path.Combine(this.imgPath, "depth-frame.png");
 
             // write the new file to disk
             try

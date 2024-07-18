@@ -104,7 +104,6 @@ def thread_runtime():
 
         if STATE==ACTIVE and files:
             compiler.compile_image(files[-1])    
-            os.remove(f"{compiler.input_dir}/{files[-1]}")
             time.sleep(compiler.thread_sleep_time)
 
 exec_thread = threading.Thread(target=thread_runtime)
